@@ -1,0 +1,16 @@
+// Styling for the gallery section
+.gallery-section {
+  * {
+    z-index: 2;
+  }
+}
+
+.shop-btn {
+    padding-top: 70px;
+}
+@media (min-width: 768px) {
+  .shop-btn {
+    padding-top: 120px;
+  }
+}
+
