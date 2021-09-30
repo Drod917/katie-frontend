@@ -15,13 +15,13 @@ const Shop = ({ className, frontmatter }) => {
     const { anchor, header, subheader, telephone, email } = frontmatter;
 
     return (
-        <PageSection className="shop-btn" id={anchor}>
+        <PageSection id={anchor}>
+            <SectionHeader header={header} subheader={subheader}/>
             <Row className="justify-content-center shop-btn">
                 <Button size="xl" variant="primary" className="text-uppercase" href="https://shop.saloninteractive.com/store/KBHAIR/product_categories?group=1">
-                    Shop Now
+                    Browse
                 </Button>
             </Row>
-            <SectionHeader header="tests" subheader="subtest"/>
         </PageSection >
     );
 };

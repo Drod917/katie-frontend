@@ -1,9 +1,8 @@
 ---
 copyright: "Copyright © Katie Bostrom 2021"
 social: {
-  twitter: "#",
   facebook: "#",
-  medium: "#"
+  instagram: "katiebostromhair"
 }
 privacyText: "Privacy Policy"
 privacyHref: "#!"
