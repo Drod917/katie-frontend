@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Button, Row, Col } from "react-bootstrap";
 import Icon from "components/Icon";
 import PageSection from "components/PageSection";
+import SectionHeader from "components/SectionHeader";
 import { none } from "ramda";
 
 const Shop = ({ className, frontmatter }) => {
@@ -20,6 +21,7 @@ const Shop = ({ className, frontmatter }) => {
                     Shop Now
                 </Button>
             </Row>
+            <SectionHeader header="tests" subheader="subtest"/>
         </PageSection >
     );
 };
