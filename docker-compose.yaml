@@ -1,0 +1,16 @@
+version: "3"
+services:
+  client:
+    build:
+      context: ./
+      dockerfile: ./dockerfile
+    volumes:
+      - ./src:/app/src # Links the source files to the running container
+      - ./content:/app/content
+      - ./config:/app/config
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=development
+      - GATSBY_WEBPACK_PUBLICPATH=/
+      - CHOKIDAR_USEPOLLING=1
