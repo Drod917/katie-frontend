@@ -82,7 +82,7 @@
     "build": "gatsby build",
     "dev": "gatsby develop -H 0.0.0.0 -p 8000",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve -H 0.0.0.0 -p 9000",
     "eslint": "eslint ./src",
     "test": "cross-env NODE_ENV=test yarn run eslint",
     "testbuild": "yarn test && yarn build"

@@ -1,7 +1,7 @@
 FROM node:14
 WORKDIR /app
 
-EXPOSE 8000 9929 9230
+EXPOSE 9000 8000 9929 9230
 ENV HOST=0.0.0.0
 
 # COPY the package.json file, update any deps and install them
@@ -15,5 +15,6 @@ RUN npm install
 
 # copy the whole source folder(the dir is relative to the Dockerfile)
 COPY . .
+RUN npm run build
 
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "run", "serve"]
