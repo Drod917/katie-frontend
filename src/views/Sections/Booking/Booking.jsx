@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import { Row, Col } from "react-bootstrap";
 import Icon from "components/Icon";
 import PageSection from "components/PageSection";
+import BookingForm from "components/BookingForm";
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 const Booking = ({ className, frontmatter }) => {
     if (!frontmatter) {
@@ -15,12 +16,7 @@ const Booking = ({ className, frontmatter }) => {
     return (
         <PageSection className={className} id={anchor}>
             <Row className="justify-content-center">
-                <form>
-                    <label htmlFor="testy">
-                        {header}<input id="testy" type="text"/>
-                    </label>
-                    <button type="submit">Go</button>
-                </form>
+                <BookingForm/>
             </Row>
         </PageSection>
     );
