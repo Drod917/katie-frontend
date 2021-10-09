@@ -6,17 +6,17 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'sections'
-    label: 'Sections'
+  - name: 'services'
+    label: 'Services'
     folder: 'content/sections'
     create: false
-    slug: '{{anchor}}.en'
+    slug: '1-Services'
     media_folder: ''
     public_folder: ''
-    path: '{{anchor}}.en'
+    path: '1-Services.en'
     editor:
       preview: false
     fields:
       - { label: 'Anchor', name: 'anchor', widget: 'string' }
       - { label: 'Header', name: 'header', widget: 'string' }
-      - { label: 'Content', name: 'content', widget: 'string' }
+      - { label: 'Services', name: 'services', widget: 'string' }
