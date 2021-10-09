@@ -1,6 +1,7 @@
 backend:
-  name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  name: github
+  branch: dev # Branch to update (optional; defaults to master)
+  repo: drod917/katie-frontend
 
 media_folder: static/img
 public_folder: /img
@@ -10,7 +11,7 @@ collections:
     label: 'Services'
     folder: 'content/sections'
     create: false
-    slug: '1-Services'
+    slug: '{{header}}'
     media_folder: ''
     public_folder: ''
     path: '1-Services.en'
@@ -19,4 +20,3 @@ collections:
     fields:
       - { label: 'Anchor', name: 'anchor', widget: 'string' }
       - { label: 'Header', name: 'header', widget: 'string' }
-      - { label: 'Services', name: 'services', widget: 'string' }
