@@ -6,9 +6,12 @@ local_backend: true
 media_folder: static/img
 public_folder: /img
 
+site_url: https://katie-frontend.netlify.app
+
 collections:
   - name: 'editor'
     label: 'Editor'
+    preview_path: /
     files:
       - label: "Services"
         name: "services"
@@ -62,6 +65,16 @@ collections:
               - {label: Name, name: header, widget: string}
               - {label: Job, name: subheader, widget: string}
               - {label: Image, name: imageFileName, widget: image, media_folder: /content/assets/images/team}
+              - label: Social
+                name: social
+                widget: object
+                fields:
+                  - {label: Instagram, name: instagram, widget: string, required: false}
+                  - {label: Facebook, name: facebook, widget: string, required: false}
+                  - {label: LinkedIn, name: linkedin, widget: string, required: false}
+                  - {label: Github, name: github, widget: string, required: false}
+                  - {label: Twitter, name: twitter, widget: string, required: false}
+                  - {label: Medium, name: medium, widget: string, required: false}
       - label: "Contact"
         name: "contact"
         file: "content/sections/5-Contact.en.md"
