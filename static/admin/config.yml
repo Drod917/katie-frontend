@@ -7,8 +7,8 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'services'
-    label: 'Services'
+  - name: 'editor'
+    label: 'Editor'
     files:
       - label: "Services"
         name: "services"
@@ -24,6 +24,52 @@ collections:
               - {label: Icon, name: iconName, widget: string}
               - {label: Header, name: header, widget: string}
               - {label: Content, name: content, widget: string}
+      - label: "Gallery"
+        name: "gallery"
+        file: "content/sections/2-Gallery.en.md"
+        fields:
+          - {label: Anchor, name: anchor, widget: string}
+          - {label: Header, name: header, widget: string}
+          - {label: Subheader, name: subheader, widget: string}
+          - label: Items
+            name: gallery
+            widget: list
+            fields:
+              - {label: ImageName, name: imageFileName, widget: string}
+              - {label: Header, name: header, widget: string}
+              - {label: Subheader, name: subheader, widget: string}
+              - {label: Content, name: content, widget: string}
+      - label: "Shop"
+        name: "shop"
+        file: "content/sections/3-Shop.en.md"
+        fields:
+          - {label: Anchor, name: anchor, widget: string}
+          - {label: Header, name: header, widget: string}
+          - {label: Subheader, name: subheader, widget: string}
+      - label: "Team"
+        name: "team"
+        file: "content/sections/4-Team.en.md"
+        fields:
+          - {label: Anchor, name: anchor, widget: string}
+          - {label: Header, name: header, widget: string}
+          - {label: Subheader, name: subheader, widget: string}
+          - {label: Content, name: content, widget: string}
+          - label: Members
+            name: teamMember
+            widget: list
+            fields:
+              - {label: ImageName, name: imageFileName, widget: string}
+              - {label: Header, name: header, widget: string}
+              - {label: Subheader, name: subheader, widget: string}
+      - label: "Contact"
+        name: "contact"
+        file: "content/sections/5-Contact.en.md"
+        fields:
+          - {label: Anchor, name: anchor, widget: string}
+          - {label: Header, name: header, widget: string}
+          - {label: Subheader, name: subheader, widget: string}
+          - {label: Telephone, name: telephone, widget: string}
+          - {label: Email, name: email, widget: string}
     create: false
     media_folder: ''
     public_folder: ''
