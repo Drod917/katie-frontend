@@ -1,7 +1,7 @@
 backend:
-  name: github
-  branch: dev # Branch to update (optional; defaults to master)
-  repo: drod917/katie-frontend
+  name: git-gateway
+
+local_backend: true
 
 media_folder: static/img
 public_folder: /img
@@ -9,14 +9,23 @@ public_folder: /img
 collections:
   - name: 'services'
     label: 'Services'
-    folder: 'content/sections'
+    files:
+      - label: "Services"
+        name: "services"
+        file: "content/sections/1-Services.en.md"
+        fields:
+          - {label: Anchor, name: anchor, widget: string}
+          - {label: Header, name: header, widget: string}
+          - {label: Subheader, name: subheader, widget: string}
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - {label: Icon, name: iconName, widget: string}
+              - {label: Header, name: header, widget: string}
+              - {label: Content, name: content, widget: string}
     create: false
     media_folder: ''
     public_folder: ''
-    path: '1-Services.en'
     editor:
-      preview: false
-    fields:
-      - { label: 'Anchor', name: 'anchor', widget: 'string' }
-      - { label: 'Header', name: 'header', widget: 'string' }
-      - { label: 'Subheader', name: 'subheader', widget: 'string' }
+      preview: true
