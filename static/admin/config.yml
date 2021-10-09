@@ -21,9 +21,9 @@ collections:
             name: services
             widget: list
             fields:
-              - {label: Icon, name: iconName, widget: string}
               - {label: Header, name: header, widget: string}
               - {label: Content, name: content, widget: string}
+              - {label: Icon, name: iconName, widget: string}
       - label: "Gallery"
         name: "gallery"
         file: "content/sections/2-Gallery.en.md"
@@ -35,10 +35,11 @@ collections:
             name: gallery
             widget: list
             fields:
-              - {label: ImageName, name: imageFileName, widget: string}
               - {label: Header, name: header, widget: string}
               - {label: Subheader, name: subheader, widget: string}
               - {label: Content, name: content, widget: string}
+              - {label: Image, name: imageFileName, widget: image, media_folder: /content/assets/images/gallery}
+              - {label: ImageDetail, name: imageFileNameDetail, widget: image, media_folder: /content/assets/images/gallery}
       - label: "Shop"
         name: "shop"
         file: "content/sections/3-Shop.en.md"
@@ -58,9 +59,9 @@ collections:
             name: teamMember
             widget: list
             fields:
-              - {label: ImageName, name: imageFileName, widget: string}
-              - {label: Header, name: header, widget: string}
-              - {label: Subheader, name: subheader, widget: string}
+              - {label: Name, name: header, widget: string}
+              - {label: Job, name: subheader, widget: string}
+              - {label: Image, name: imageFileName, widget: image, media_folder: /content/assets/images/team}
       - label: "Contact"
         name: "contact"
         file: "content/sections/5-Contact.en.md"

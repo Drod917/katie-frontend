@@ -11,7 +11,7 @@ const Image = ({ fileName, alt, ...restProps }) => (
         images: allFile {
           edges {
             node {
-              relativePath
+              absolutePath
               name
               childImageSharp {
                 gatsbyImageData(layout: FULL_WIDTH)
@@ -22,7 +22,7 @@ const Image = ({ fileName, alt, ...restProps }) => (
       }
     `}
     render={({ images }) => {
-      const image = images.edges.find((n) => n.node.relativePath.includes(fileName));
+      const image = images.edges.find((n) => n.node.absolutePath.includes(fileName));
 
       if (!image) {
         return null;
