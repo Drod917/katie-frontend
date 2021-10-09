@@ -92,5 +92,8 @@ module.exports = {
         pagesPaths: ["/content/"],
       },
     },
+    {
+      resolve: "gatsby-plugin-netlify-cms"
+    },
   ],
 };

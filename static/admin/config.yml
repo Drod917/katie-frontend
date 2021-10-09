@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: 'sections'
+    label: 'Sections'
+    folder: 'content/sections'
+    create: false
+    slug: '{{anchor}}.en'
+    media_folder: ''
+    public_folder: ''
+    path: '{{anchor}}.en'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Anchor', name: 'anchor', widget: 'string' }
+      - { label: 'Header', name: 'header', widget: 'string' }
+      - { label: 'Content', name: 'content', widget: 'string' }
