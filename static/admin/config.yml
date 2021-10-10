@@ -6,7 +6,7 @@ local_backend: true
 media_folder: static/img
 public_folder: /img
 
-site_url: https://katie-frontend.netlify.app
+site_url: http://localhost:8000
 
 collections:
   - name: 'editor'
