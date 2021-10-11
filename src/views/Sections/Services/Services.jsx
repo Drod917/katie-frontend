@@ -21,8 +21,13 @@ const Services = ({ className, frontmatter }) => {
             </Row>
             <Row className="text-center">
                 {services.map((service) => (
-                    <Col md={4} key={service.header}>
-                        <ServiceItem {...service} />
+                    <Col
+                        data-sal="fade"
+                        data-sal-duration="1500"
+                        data-sal-delay="0"
+                        data-sal-easing="ease"  
+                        md={4} key={service.header}>
+                            <ServiceItem {...service} />
                     </Col>
                 ))}
             </Row>
