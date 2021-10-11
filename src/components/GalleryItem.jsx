@@ -28,7 +28,12 @@ const GalleryItem = ({
 
     return (
         <>
-            <Col md={4} sm={6} className="gallery-item">
+            <Col
+                data-sal="fade"
+                data-sal-duration="500"
+                data-sal-delay="0"
+                data-sal-easing="ease"  
+                md={4} sm={6} className="gallery-item">
                 <a
                     role="button"
                     tabIndex={-1}
