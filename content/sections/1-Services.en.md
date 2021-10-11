@@ -1,7 +1,10 @@
 ---
 anchor: Services
 header: Services
-subheader: Lorem ipsum dolor sit amet consectetur.
+subheader: Lorem ipsum dolor sit amet consectetur. Minima maxime quam architecto
+  quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet
+  consectetur. Minima maxime quam architecto quo inventore harum ex magni, dicta
+  impedit.
 services:
   - iconName: ScissorsIcon
     header: Cutting
