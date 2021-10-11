@@ -23,6 +23,7 @@ const TeamMember = ({
     return (
         <div className="team-member">
             <Image
+                imgStyle={{ borderRadius: '100%' }}
                 className="mx-auto circle rounded-circle"
                 fileName={imageFileName}
                 alt={imageAlt || header || subheader}
