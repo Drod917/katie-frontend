@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Button } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import useSmoothScrollTo from "hooks/useSmoothScrollTo";
 import ImageCard from "components/ImageCard";
+
 
 const Top = ({ frontmatter }) => {
     if (!frontmatter) {
@@ -11,19 +12,43 @@ const Top = ({ frontmatter }) => {
     }
 
     const { header, subheader, imageFileName, jumpToAnchor, jumpToAnchorText } = frontmatter;
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const scrollToSection = useSmoothScrollTo(jumpToAnchor);
+    
+    // react-hooks/rules-of-hooks
+    /* eslint-disable */ 
+    const scrollTo = {
+        "services": useSmoothScrollTo(jumpToAnchor),
+        "booking": useSmoothScrollTo("Booking")
+    };
+    /* eslint-enable */
+
+    const style = {
+        justifyContent: "center",
+        paddingBottom: "40px"
+    }
 
     let extraInfoPart;
     if (jumpToAnchor && jumpToAnchorText) {
         extraInfoPart = (
-            <Button
-                size="xl"
-                variant="primary"
-                className="text-uppercase"
-                onClick={scrollToSection}>
-                {jumpToAnchorText}
-            </Button>
+            <Col md={12} className="text-center">
+                <Row style={style}>
+                    <Button
+                        size="xl"
+                        variant="primary"
+                        className="text-uppercase"
+                        onClick={scrollTo.services}>
+                        {jumpToAnchorText}
+                    </Button>
+                </Row>
+                <Row style={style}>
+                    <Button
+                        size="md"
+                        variant="primary"
+                        className="text-uppercase"
+                        onClick={scrollTo.booking}>
+                        Book Now
+                    </Button>    
+                </Row>                
+            </Col>
         );
     }
 
