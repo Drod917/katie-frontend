@@ -12,7 +12,7 @@ const ImageCard = ({ className, imageFileName, imageAlt, header, subheader, extr
       <Image className="image" fileName={imageFileName} alt={imageAlt || header || subheader} />
       <Card.ImgOverlay className="no-padding">
         <Container>
-          <div className="intro-text">
+          <div className="intro-text fade-in">
             <div className="intro-lead-in">{subheader}</div>
             <div className="intro-heading text-uppercase">{header}</div>
             {extraInfo}
