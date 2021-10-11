@@ -99,7 +99,7 @@ module.exports = {
       resolve: "gatsby-plugin-scroll-reveal",
       options: {
           threshold: 0.50, // Pct of element's area that needs to be visable
-          once: false, // Defines if animation needs to be launched once
+          once: true, // Defines if animation needs to be launched once
           disable: false, // Flag for disabling animations
 
           // Advanced options
