@@ -33,7 +33,7 @@ const Team = ({ className, frontmatter }) => {
                 ))}
             </Row>
             <Row>
-                <Col lg={12} className="mx-auto text-center">
+                <Col lg={8} className="mx-auto text-center">
                     <p className="large text-muted">{rootContent}</p>
                 </Col>
             </Row>
