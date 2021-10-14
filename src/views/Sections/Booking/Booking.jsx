@@ -10,7 +10,7 @@ const Booking = ({ className, frontmatter }) => {
     if (!frontmatter) {
         return null;
     }
-    const phoneRegExp = /^([1-9]{3}[-])([1-9]{3}[-])([1-9]{4})$/
+    const phoneRegExp = /(^([1-9]{3}[-]?)([1-9]{3}[-]?)([1-9]{4})$)|(^\(([1-9]{3}\)[-]?)([1-9]{3}[-]?)([1-9]{4})$)/
     const { anchor, header, subheader, telephone, email } = frontmatter;
 
     return (
@@ -28,7 +28,7 @@ const Booking = ({ className, frontmatter }) => {
                         phoneNumber: Yup.string()
                             .matches(phoneRegExp, 'Format: 012-345-6789')
                             .required('Required'),
-                        email: Yup.string().email('Invalid email address').required('Required')
+                        email: Yup.string().email(' ').required('Required')
                     })}
                     onSubmit={(values, { setSubmitting }) => {
                         setTimeout(() => {
@@ -37,51 +37,51 @@ const Booking = ({ className, frontmatter }) => {
                         }, 400);
                     }}
                 >
-                    <Form>
-                        <Field 
-                            name="fullName"
-                            render={({ field, props }) => (
-                                <FormGroup controlId="fullName">
-                                    <FormLabel>Full Name</FormLabel>
-                                    <FormControl 
-                                        type="text"
-                                        value={field.value}
-                                        onChange={field.onChange}/>
-                                    {/* ErrorMessage name references validationSchema */}
-                                    <ErrorMessage name="fullName"/>
-                                </FormGroup>
-                            )}
-                        />
-                        <Field 
-                            name="phoneNumber"
-                            render={({ field, props }) => (
-                                <FormGroup controlId="phoneNumber">
-                                    <FormLabel>Phone Number</FormLabel>
-                                    <FormControl 
-                                        type="text"
-                                        value={field.value}
-                                        onChange={field.onChange}/>
-                                    <ErrorMessage name="phoneNumber"/>
-                                </FormGroup>
-                            )}
-                        />
-                        <Field 
-                            name="email"
-                            render={({ field, props }) => (
-                                <FormGroup controlId="email">
-                                    <FormLabel>Email Address</FormLabel>
-                                    <FormControl 
-                                        type="text"
-                                        value={field.value}
-                                        onChange={field.onChange}/>
-                                    <ErrorMessage name="email"/>
-                                </FormGroup>
-                            )}
-                        />
-                        <Row className="justify-content-center">
-                            <button className="styled-btn" type="submit">Submit</button>
-                        </Row>
-                    </Form>
+                    {({
+                        handleSubmit,
+                        handleChange,
+                        handleBlur,
+                        values,
+                        touched,
+                        isValid,
+                        errors,
+                    }) => (
+                        <Form>
+                            <FormGroup controlId="fullName">
+                                <FormLabel>Full Name</FormLabel>
+                                <FormControl 
+                                    type="text"
+                                    value={values.fullName}
+                                    onChange={handleChange}
+                                    isValid={touched.fullName && !errors.fullName}/>
+                                {/* ErrorMessage name references validationSchema */}
+                                <ErrorMessage name="fullName"/>
+                            </FormGroup>
+                            <FormGroup controlId="phoneNumber">
+                                <FormLabel>Phone Number</FormLabel>
+                                <FormControl 
+                                    type="text"
+                                    value={values.phoneNumber}
+                                    onChange={handleChange}
+                                    isValid={touched.fullName && !errors.phoneNumber}/>
+                                {/* ErrorMessage name references validationSchema */}
+                                <ErrorMessage name="phoneNumber"/>
+                            </FormGroup>
+                            <FormGroup controlId="email">
+                                <FormLabel>Email Address</FormLabel>
+                                <FormControl 
+                                    type="text"
+                                    value={values.email}
+                                    onChange={handleChange}
+                                    isValid={touched.fullName && !errors.email}/>
+                                {/* ErrorMessage name references validationSchema */}
+                                <ErrorMessage name="email"/>
+                            </FormGroup>
+                            <Row className="justify-content-center">
+                                <button className="styled-btn" type="submit">Submit</button>
+                            </Row>
+                        </Form>
+                    )}
                 </Formik>
             </Row>
         </PageSection>
