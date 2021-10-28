@@ -69,19 +69,25 @@ const createBooking = async (booking) => {
     }
 }
 
-
-
 const BookingForm = () => {
-
     const phoneRegExp = /(^([1-9]{3}[-]?)([1-9]{3}[-]?)([1-9]{4})$)|(^\(([1-9]{3}\)[-]?)([1-9]{3}[-]?)([1-9]{4})$)/
     const [verified, setVerified] = React.useState(false);
+    const [submitted, setSubmitted] = React.useState(false);
+
     const onVerify = e => {
         setVerified(true);
       };
+    const onVerifyExpire = e => {
+        setVerified(false);
+    };
+    const onSubmitted = e => {
+        setSubmitted(true);
+    }
+
 
     return (
         <Formik
-            initialValues={{ fullname: '', phone: '', email: '', date: '', service: '', comment: '' }}
+            initialValues={{ fullname: '', phone: '', email: '', date: '', service: 'Styling', comment: '' }}
             validationSchema={Yup.object({
                 fullname: Yup.string()
                     .max(30, 'Must be 30 characters or less')
@@ -89,13 +95,13 @@ const BookingForm = () => {
                 phone: Yup.string()
                     .matches(phoneRegExp, 'Ex. 012-345-6789')
                     .required('Required'),
-                email: Yup.string().email(' ').required('Required')
+                email: Yup.string().email(' ').required('Required'),
+                date: Yup.date().required('Required')
             })}
-            onSubmit={(values, { setSubmitting }) => {
+            onSubmit={(values) => {
                 setTimeout(() => {
-                    // alert(JSON.stringify(values, null, 2));
+                    alert(JSON.stringify(values, null, 2));
                     createBooking(values);
-                    setSubmitting(false);
                 }, 400);
             }}
         >
@@ -170,11 +176,14 @@ const BookingForm = () => {
                         <FormLabel>Service</FormLabel>
                         <FormControl 
                             size="md"
-                            type="text"
-                            value={values.service}
+                            as="select"
                             onChange={handleChange}
-                            isValid={touched.service && !errors.service}
-                            isInvalid={touched.service && errors.service}/>
+                            value={values.service}
+                            >
+                                <option>Styling</option>
+                                <option>Coloring</option>
+                                <option>Cutting</option>
+                        </FormControl>
                         <FormControl.Feedback type="invalid">
                             Required
                         </FormControl.Feedback>
@@ -186,8 +195,9 @@ const BookingForm = () => {
                             type="text"
                             value={values.comment}
                             onChange={handleChange}
-                            isValid={touched.comment && !errors.comment}
-                            isInvalid={touched.comment && errors.comment}/>
+                            // isValid={touched.comment && !errors.comment}
+                            // isInvalid={touched.comment && errors.comment}
+                            />
                         <FormControl.Feedback type="invalid">
                             Required
                         </FormControl.Feedback>
@@ -195,9 +205,10 @@ const BookingForm = () => {
                     <Reaptcha
                         sitekey="6Lc1RPscAAAAAHf_9GsfVDZ1Ru2GD9WpL9FD2weT"
                         onVerify={onVerify}
+                        onExpire={onVerifyExpire}
                     />
                     <Row className="justify-content-center" style={{ paddingTop:"2.5rem" }}>
-                        <button className="btn-primary btn-lg" type="submit">Submit</button>
+                        <button className="btn-primary btn-lg" type="submit" disabled={!verified}>Submit</button>
                     </Row>
                 </Form>
             )}
