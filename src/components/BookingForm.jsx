@@ -1,8 +1,8 @@
 import React from "react";
+import Reaptcha from "reaptcha";
 import { FormControl, FormGroup, FormLabel, Row, Col } from "react-bootstrap";
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-
 
 const isResponseOk = (res) => {
     return !(res.status !== 200 && res.status !== 201);
@@ -74,6 +74,10 @@ const createBooking = async (booking) => {
 const BookingForm = () => {
 
     const phoneRegExp = /(^([1-9]{3}[-]?)([1-9]{3}[-]?)([1-9]{4})$)|(^\(([1-9]{3}\)[-]?)([1-9]{3}[-]?)([1-9]{4})$)/
+    const [verified, setVerified] = React.useState(false);
+    const onVerify = e => {
+        setVerified(true);
+      };
 
     return (
         <Formik
@@ -188,6 +192,10 @@ const BookingForm = () => {
                             Required
                         </FormControl.Feedback>
                     </FormGroup>
+                    <Reaptcha
+                        sitekey="6Lc1RPscAAAAAHf_9GsfVDZ1Ru2GD9WpL9FD2weT"
+                        onVerify={onVerify}
+                    />
                     <Row className="justify-content-center" style={{ paddingTop:"2.5rem" }}>
                         <button className="btn-primary btn-lg" type="submit">Submit</button>
                     </Row>
