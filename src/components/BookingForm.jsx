@@ -99,9 +99,9 @@ const BookingForm = () => {
                 date: Yup.date().required('Required')
             })}
             onSubmit={(values) => {
-                setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
-                    createBooking(values);
+                setTimeout(async () => {
+                    const res = await createBooking(values);
+                    alert(JSON.stringify(res, null, 2));
                 }, 400);
             }}
         >
