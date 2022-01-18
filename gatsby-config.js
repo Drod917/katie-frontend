@@ -93,7 +93,14 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-netlify-cms"
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        /**
+         * One convention is to place your Netlify CMS customization code in a
+         * `src/cms` directory.
+         */
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
     },
     {
       resolve: "gatsby-plugin-scroll-reveal",
@@ -110,6 +117,6 @@ module.exports = {
           enterEventName: 'sal:in', // Enter event name
           exitEventName: 'sal:out', // Exit event name 
       }
-    }
+    },
   ],
 };
