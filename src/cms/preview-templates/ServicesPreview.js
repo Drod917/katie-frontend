@@ -5,12 +5,12 @@ import Services from '../../views/Sections/Services'
 const ServicesPreview = ({ entry, getAsset }) => {
     const data = entry.getIn(['data']).toJS()
 
-    console.log("data")
+    console.log(data)
 
     if (data) {
         return (
             <Services
-              frontmatter={null}
+              frontmatter={data}
             />
         )
     }
