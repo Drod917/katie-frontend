@@ -70,7 +70,7 @@ const createBooking = async (booking) => {
 }
 
 const BookingForm = () => {
-    const phoneRegExp = /(^([1-9]{3}[-]?)([1-9]{3}[-]?)([1-9]{4})$)|(^\(([1-9]{3}\)[-]?)([1-9]{3}[-]?)([1-9]{4})$)/
+    const phoneRegExp = /(^([0-9]{3}[-]?)([0-9]{3}[-]?)([0-9]{4})$)|(^\(([0-9]{3}\)[-]?)([0-9]{3}[-]?)([0-9]{4})$)/
     const [verified, setVerified] = React.useState(false);
     const [submitted, setSubmitted] = React.useState(false);
 
