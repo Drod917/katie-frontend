@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import { Button, Row } from "react-bootstrap";
+import { Button, Row, Col } from "react-bootstrap";
 import SectionHeader from "components/SectionHeader";
 import GalleryItem from "components/GalleryItem";
 import PageSection from "components/PageSection";
@@ -40,6 +40,11 @@ const Gallery = ({ className, frontmatter }) => {
                         />
                     ),
                 )}
+            </Row>
+            <Row>
+                <Col lg={8} className={clsx("section-header mx-auto", "text-center", className)}>
+                    {rootSubHeader}
+                </Col>
             </Row>
         </PageSection>
     );
