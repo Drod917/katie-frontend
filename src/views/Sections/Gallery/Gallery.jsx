@@ -8,6 +8,8 @@ import GalleryItem from "components/GalleryItem";
 import PageSection from "components/PageSection";
 import "./Gallery.scss";
 
+import "../../../components/SectionHeader.scss"
+
 const Gallery = ({ className, frontmatter }) => {
     if (!frontmatter) {
         return null;
@@ -18,7 +20,7 @@ const Gallery = ({ className, frontmatter }) => {
     return (
         <PageSection className={clsx("gallery-section", className)} id={anchor}>
             <Row>
-                <SectionHeader header={rootHeader} subheader={rootSubHeader} />
+                <SectionHeader header={rootHeader} subheader={" "} />
             </Row>
             <Row>
                 {gallery.map(
@@ -42,9 +44,9 @@ const Gallery = ({ className, frontmatter }) => {
                 )}
             </Row>
             <Row>
-                <Col lg={8} className={clsx("section-header mx-auto", "text-center", className)}>
-                    {rootSubHeader}
-                </Col>
+                <a href="https://instagram.com/katiebostromhair" className={clsx("section-header mx-auto", "text-center", className)}>
+                    <h3 className="section-subheading text-muted">{rootSubHeader}</h3>
+                </a>
             </Row>
         </PageSection>
     );
