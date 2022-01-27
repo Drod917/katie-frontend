@@ -6,7 +6,7 @@ import { Button, Row, Col } from "react-bootstrap";
 import Icon from "components/Icon";
 import PageSection from "components/PageSection";
 import SectionHeader from "components/SectionHeader";
-import { none } from "ramda";
+import ShopItem from "components/ShopItem";
 
 const Shop = ({ className, frontmatter }) => {
     if (!frontmatter) {
@@ -17,7 +17,14 @@ const Shop = ({ className, frontmatter }) => {
 
     return (
         <PageSection className={className} id={anchor}>
-            <SectionHeader header={header} subheader={subheader}/>
+            <Row>
+                <SectionHeader header={header} subheader={subheader}/>
+            </Row>
+            <Row>
+                <Col>
+                    <ShopItem/>
+                </Col>
+            </Row>
             <Row className="justify-content-center shop-btn">
                 <Button size="xl" variant="primary" className="text-uppercase" href="https://shop.saloninteractive.com/store/KBHAIR/product_categories?group=1">
                     Browse
