@@ -45,7 +45,17 @@ const Gallery = ({ className, frontmatter }) => {
             </Row>
             <Row>
                 <a href="https://instagram.com/katiebostromhair" className={clsx("section-header mx-auto", "text-center", className)}>
-                    <h3 className="section-subheading text-muted">{rootSubHeader}</h3>
+                    <h3 className="text-muted" 
+                        style={{ 
+                            fontSize: '16px',
+                            fontWeight: '400',
+                            fontStyle: 'italic',
+                            marginTop: '75px',
+                            textTransform: 'none'
+                        }}
+                    >
+                        {rootSubHeader}
+                    </h3>
                 </a>
             </Row>
         </PageSection>
