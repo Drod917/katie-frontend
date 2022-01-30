@@ -1,7 +1,7 @@
 ---
 anchor: "Gallery"
 header: "Gallery"
-subheader: "Visit instagram for more of my work."
+subheader: "Visit instagram for more of my work"
 gallery: [
   {
     imageFileName: "gallery/01-thumbnail.jpg",
