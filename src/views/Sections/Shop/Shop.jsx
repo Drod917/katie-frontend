@@ -6,7 +6,7 @@ import { Carousel, Button, Row, Col } from "react-bootstrap";
 import Icon from "components/Icon";
 import PageSection from "components/PageSection";
 import SectionHeader from "components/SectionHeader";
-import ShopItem from "components/ShopItem";
+import ShopCarousel from "components/ShopCarousel";
 
 const Shop = ({ className, frontmatter }) => {
     if (!frontmatter) {
@@ -21,7 +21,7 @@ const Shop = ({ className, frontmatter }) => {
                 <SectionHeader header={header} subheader={subheader}/>
             </Row>
             <Row className="justify-content-center">
-                <ShopItem/>
+                <ShopCarousel/>
             </Row>
             <Row className="justify-content-center shop-btn">
                 <Button size="xl" variant="primary" className="text-uppercase" href="https://shop.saloninteractive.com/store/KBHAIR/product_categories?group=1">

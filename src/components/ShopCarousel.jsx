@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { Carousel, Col, Row } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image"
 
-import "./ShopItem.scss"
+import "./ShopCarousel.scss"
 
-const ShopItem = ({ link, image }) => {
+const ShopCarousel = ({ link, image }) => {
     
     return (
         <Carousel variant="dark" indicators="false">
@@ -97,14 +97,14 @@ const ShopItem = ({ link, image }) => {
     // )
 }
 
-ShopItem.propTypes = {
+ShopCarousel.propTypes = {
     link: PropTypes.string,
     image: PropTypes.string
 }
 
-ShopItem.defaultProps = {
+ShopCarousel.defaultProps = {
     link: null,
     image: null
 }
 
-export default ShopItem;
+export default ShopCarousel;
