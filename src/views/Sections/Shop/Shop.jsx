@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import { Button, Row, Col } from "react-bootstrap";
+import { Carousel, Button, Row, Col } from "react-bootstrap";
 import Icon from "components/Icon";
 import PageSection from "components/PageSection";
 import SectionHeader from "components/SectionHeader";
@@ -20,14 +20,12 @@ const Shop = ({ className, frontmatter }) => {
             <Row>
                 <SectionHeader header={header} subheader={subheader}/>
             </Row>
-            <Row>
-                <Col>
-                    <ShopItem/>
-                </Col>
+            <Row className="justify-content-center">
+                <ShopItem/>
             </Row>
             <Row className="justify-content-center shop-btn">
                 <Button size="xl" variant="primary" className="text-uppercase" href="https://shop.saloninteractive.com/store/KBHAIR/product_categories?group=1">
-                    Browse
+                    Browse Shop
                 </Button>
             </Row>
         </PageSection >

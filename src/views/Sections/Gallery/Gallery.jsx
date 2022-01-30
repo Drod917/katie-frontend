@@ -57,6 +57,15 @@ const Gallery = ({ className, frontmatter }) => {
                         {rootSubHeader}
                     </h3>
                 </a>
+                {/* <Button 
+                    style={{
+                        marginTop: '75px'
+                    }}
+                    size="xl" variant="primary" 
+                    className={clsx("section-header mx-auto", "text-center", "text-uppercase", className)} 
+                    href="https://instagram.com/katiebostromhair">
+                        {rootSubHeader}
+                </Button> */}
             </Row>
         </PageSection>
     );
