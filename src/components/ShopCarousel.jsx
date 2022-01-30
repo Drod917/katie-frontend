@@ -8,53 +8,55 @@ import "./ShopCarousel.scss"
 const ShopCarousel = ({ link, image }) => {
     
     return (
-        <Carousel variant="dark" indicators="false">
-            <Carousel.Item interval={5000}>
-                <a href="https://shop.saloninteractive.com/store/KBHAIR/product/37648/41099">
-                    <StaticImage
-                    layout="constrained"
-                    width={600}
-                    height={600}
-                    src="https://s3-us-west-2.amazonaws.com/production-saloninteractive/client_connect_images/82985/original.jpg?1638469308"
-                    alt="First slide"
-                    />
-                </a>
-                {/* <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption> */}
-            </Carousel.Item>
-            <Carousel.Item interval={5000}>
-                <a href="https://shop.saloninteractive.com/store/KBHAIR/product/35017/38467">
-                    <StaticImage
-                    layout="constrained"
-                    width={600}
-                    height={600}
-                    src="https://s3-us-west-2.amazonaws.com/production-saloninteractive/client_connect_images/82979/original.jpg?1638469024"
-                    alt="Second slide"
-                    />
-                </a>
-                {/* <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption> */}
-            </Carousel.Item>
-            <Carousel.Item interval={5000}>
-                <a href="https://shop.saloninteractive.com/store/KBHAIR/product/52345/55799">
-                    <StaticImage
-                    layout="constrained"
-                    width={1000}
-                    height={600}
-                    src="https://res.cloudinary.com/dieqyibh4/image/upload/v1591804067/Copy_of_razorhandlecassette_okzlxn.png"
-                    alt="Third slide"
-                    />
-                </a>
-                {/* <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </Carousel.Caption> */}
-            </Carousel.Item>
-        </Carousel>
+        <div style={{ height: '30rem' }}>
+            <Carousel variant="dark" indicators="false">
+                        <Carousel.Item interval={5000}>
+                            <a href="https://shop.saloninteractive.com/store/KBHAIR/product/37648/41099">
+                                <StaticImage
+                                layout="constrained"
+                                width={600}
+                                height={600}
+                                src="https://s3-us-west-2.amazonaws.com/production-saloninteractive/client_connect_images/82985/original.jpg?1638469308"
+                                alt="First slide"
+                                />
+                            </a>
+                            {/* <Carousel.Caption>
+                                <h3>First slide label</h3>
+                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            </Carousel.Caption> */}
+                        </Carousel.Item>
+                        <Carousel.Item interval={5000}>
+                            <a href="https://shop.saloninteractive.com/store/KBHAIR/product/35017/38467">
+                                <StaticImage
+                                layout="constrained"
+                                width={600}
+                                height={600}
+                                src="https://s3-us-west-2.amazonaws.com/production-saloninteractive/client_connect_images/82979/original.jpg?1638469024"
+                                alt="Second slide"
+                                />
+                            </a>
+                            {/* <Carousel.Caption>
+                                <h3>Second slide label</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </Carousel.Caption> */}
+                        </Carousel.Item>
+                        <Carousel.Item interval={5000}>
+                            <a href="https://shop.saloninteractive.com/store/KBHAIR/product/52345/55799">
+                                <StaticImage
+                                layout="constrained"
+                                width={1000}
+                                height={600}
+                                src="https://res.cloudinary.com/dieqyibh4/image/upload/v1591804067/Copy_of_razorhandlecassette_okzlxn.png"
+                                alt="Third slide"
+                                />
+                            </a>
+                            {/* <Carousel.Caption>
+                                <h3>Third slide label</h3>
+                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            </Carousel.Caption> */}
+                        </Carousel.Item>
+                    </Carousel>
+        </div>
     )
 
     // return (
